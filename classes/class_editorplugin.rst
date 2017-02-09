@@ -13,7 +13,7 @@ EditorPlugin
 Brief Description
 -----------------
 
-Used by the editor to extend it's functionality.
+Used by the editor to extend its functionality.
 
 Member Functions
 ----------------
@@ -52,6 +52,8 @@ Member Functions
 | :ref:`EditorSettings<class_editorsettings>`                | :ref:`get_editor_settings<class_EditorPlugin_get_editor_settings>`  **(** **)**                                                                                                                                     |
 +------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Control<class_control>`                              | :ref:`get_editor_viewport<class_EditorPlugin_get_editor_viewport>`  **(** **)**                                                                                                                                     |
++------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                       | :ref:`edit_resource<class_EditorPlugin_edit_resource>`  **(** :ref:`Resource<class_resource>` p_resource  **)**                                                                                                     |
 +------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_string>`                                | :ref:`get_name<class_EditorPlugin_get_name>`  **(** **)** virtual                                                                                                                                                   |
 +------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -252,6 +254,12 @@ Get the general settings for the editor (the same window that appears in the Set
 
 Get the main editor control. Use this as a parent for main screens.
 
+.. _class_EditorPlugin_edit_resource:
+
+- void  **edit_resource**  **(** :ref:`Resource<class_resource>` p_resource  **)**
+
+Tells the editor to handle the edit of the given resource. Ex: If you pass a Script as a argument, the editor will open the scriptEditor.
+
 .. _class_EditorPlugin_get_name:
 
 - :ref:`String<class_string>`  **get_name**  **(** **)** virtual
@@ -368,7 +376,7 @@ Remove the import plugin, don't forget to call this on exit.
 
 - void  **save_external_data**  **(** **)** virtual
 
-This method is called after the editor save the project or when the it's closed. It asks the plugin to save edited external scenes/resources.
+This method is called after the editor saves the project or when it's closed. It asks the plugin to save edited external scenes/resources.
 
 .. _class_EditorPlugin_set_state:
 
